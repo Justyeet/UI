@@ -1,0 +1,100 @@
+local library = loadstring(game:HttpGet(('https://pastebin.com/raw/FsJak6AT')))() 
+local main = library:CreateWindow("Fencing GUI")
+local Sword = main:CreateFolder("Combat")
+Sword:Label("Combat Features",Color3.fromRGB(38,38,38),Color3.fromRGB(226, 155, 64)) --BgColor,TextColor
+Sword:Button("Sword Reach",function()
+	a=Instance.new("SelectionBox",game.Players.LocalPlayer.Backpack.Foil.Handle)
+a.Adornee=game.Players.LocalPlayer.Backpack.Foil.Handle
+game.Players.LocalPlayer.Backpack.Foil.Handle.Size=Vector3.new(1,1,30)
+end)
+local teleports = main:CreateFolder("Teleports")
+Sword:Button("FE Fling",function()
+	 -- Made by JackMcJagger15
+
+power = 500 -- change this to make it more or less powerful
+
+game:GetService('RunService').Stepped:connect(function()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.Torso.CanCollide = false
+game.Players.LocalPlayer.Character["Left Leg"].CanCollide = false
+game.Players.LocalPlayer.Character["Right Leg"].CanCollide = false
+end)
+
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end)
+Sword:Button("AutoHeal (Godmode)",function()
+	                                          game:GetService("RunService").RenderStepped:Connect(function()
+    firetouchinterest(game.Players.LocalPlayer.Character.Torso, workspace.Button, 0)
+
+    firetouchinterest(game.Players.LocalPlayer.Character.Torso, workspace.Button, 1)
+end)
+end)
+Sword:Button("Reset",function()
+	game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+Sword:Slider("Walkspeed",16,100,function(value) --MinValue,MaxValue
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+
+
+
+teleports:Button("Fighting Area",function()
+	local oh1 = CFrame.new(-19.9539032, 6.89999962, 106.366669)
+local oh2 = game:GetService("Players")
+local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+
+
+oh3.CFrame = oh1
+
+-- end of script
+end)
+teleports:Button("Viewing Area",function()
+	local oh1 = CFrame.new(-20.9511166, 3.90000033, 59.4557228)
+local oh2 = game:GetService("Players")
+local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+
+
+oh3.CFrame = oh1
+
+-- end of script
+end)
+teleports:Button("Armor",function()
+	local oh1 = CFrame.new(56.3950157, 4.5999999, 124.75013)
+local oh2 = game:GetService("Players")
+local oh3 = oh2.LocalPlayer.Character.HumanoidRootPart
+
+
+oh3.CFrame = oh1
+
+-- end of script
+end)
+teleports:Button("Spawn on Mat",function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/HLYwSXUG", true))()
+end)
+local fun = main:CreateFolder("Fun")
+fun:Label("Fun Things",Color3.fromRGB(38,38,38),Color3.fromRGB(161, 196, 140))
+fun:Button("Anchor GUI",function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/UqC0MrJ6", true))()
+end)
+fun:Button("Fake Gun",function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/e3yPYJFd'),true))()
+end)
+fun:Button("Tornado",function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/YipNeYjM'),true))()
+end)
+local autofarm = main:CreateFolder("Autofarm")
+autofarm:Button("Autofarm",function()
+	loadstring(game:HttpGet(('https://pastebin.com/raw/eiKa8Dxq'),true))()
+	local VirtualUser=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+VirtualUser:CaptureController()
+VirtualUser:ClickButton2(Vector2.new())
+end)
+print'Anti Afk ran'
+end)
+autofarm:Label(";nokill to stop")
